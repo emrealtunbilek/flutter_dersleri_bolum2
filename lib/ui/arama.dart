@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
 
-class AramaSayfasi extends StatelessWidget {
+class AramaSayfasi extends StatefulWidget {
+
+  AramaSayfasi(Key k) : super(key:k);
+
+
+  @override
+  AramaSayfasiState createState() {
+    return new AramaSayfasiState();
+  }
+}
+
+class AramaSayfasiState extends State<AramaSayfasi> {
   @override
   Widget build(BuildContext context) {
      return ListView.builder(itemExtent: 300,itemBuilder: (context, index){

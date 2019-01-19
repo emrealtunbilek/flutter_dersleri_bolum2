@@ -34,12 +34,15 @@ class MyHomePageState extends State<MyHomePage> {
   AnaSayfa sayfaAna;
   AramaSayfasi sayfaArama;
 
+  var keyAnaSayfa = PageStorageKey("key_ana_sayfa");
+  var keyArama = PageStorageKey("key_arama_sayfa");
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    sayfaAna = AnaSayfa();
-    sayfaArama=AramaSayfasi();
+    sayfaAna = AnaSayfa(keyAnaSayfa);
+    sayfaArama=AramaSayfasi(keyArama);
     tumSayfalar=[sayfaAna, sayfaArama];
   }
 
