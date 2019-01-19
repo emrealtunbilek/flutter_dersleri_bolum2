@@ -4,12 +4,16 @@ import 'package:flutter_dersleri_bolum2/ui/arama.dart';
 import 'package:flutter_dersleri_bolum2/ui/drawer_menu.dart';
 import 'package:flutter_dersleri_bolum2/ui/kisisel_font_kullanimi.dart';
 import 'package:flutter_dersleri_bolum2/ui/page_view.dart';
+import 'package:flutter_dersleri_bolum2/ui/tabs.dart';
 
 void main() => runApp(FlutterDersleri());
 
 class FlutterDersleri extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Dersleri',
@@ -71,16 +75,16 @@ class MyHomePageState extends State<MyHomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text("AnaSayfa"),
+              title: Text("ExpansionTile"),
               backgroundColor: Colors.amber),
           BottomNavigationBarItem(
               icon: Icon(Icons.search),
               activeIcon: Icon(Icons.call),
-              title: Text("Ara"),
+              title: Text("Liste"),
               backgroundColor: Colors.red),
           BottomNavigationBarItem(
               icon: Icon(Icons.add),
-              title: Text("Ekle"),
+              title: Text("PageView"),
               backgroundColor: Colors.tealAccent),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_box),
@@ -92,6 +96,11 @@ class MyHomePageState extends State<MyHomePage> {
         onTap: (index){
           setState(() {
             secilenMenuItem = index;
+            if(index==3){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>TabOrnek())).then((bb){
+                secilenMenuItem = 0;
+              });
+            }
           });
         },
       ),
