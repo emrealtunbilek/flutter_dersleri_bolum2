@@ -3,6 +3,7 @@ import 'package:flutter_dersleri_bolum2/ui/ana_sayfa.dart';
 import 'package:flutter_dersleri_bolum2/ui/arama.dart';
 import 'package:flutter_dersleri_bolum2/ui/drawer_menu.dart';
 import 'package:flutter_dersleri_bolum2/ui/kisisel_font_kullanimi.dart';
+import 'package:flutter_dersleri_bolum2/ui/page_view.dart';
 
 void main() => runApp(FlutterDersleri());
 
@@ -33,6 +34,7 @@ class MyHomePageState extends State<MyHomePage> {
   List<Widget> tumSayfalar;
   AnaSayfa sayfaAna;
   AramaSayfasi sayfaArama;
+  PageViewOrnek pageViewOrnek;
 
   var keyAnaSayfa = PageStorageKey("key_ana_sayfa");
   var keyArama = PageStorageKey("key_arama_sayfa");
@@ -43,7 +45,8 @@ class MyHomePageState extends State<MyHomePage> {
     super.initState();
     sayfaAna = AnaSayfa(keyAnaSayfa);
     sayfaArama=AramaSayfasi(keyArama);
-    tumSayfalar=[sayfaAna, sayfaArama];
+    pageViewOrnek = PageViewOrnek();
+    tumSayfalar=[sayfaAna, sayfaArama, pageViewOrnek];
   }
 
   @override
